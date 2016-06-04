@@ -1,13 +1,30 @@
+$(function() {
+
+$('.grid').click(function() {
+
+  id = parseInt(this.id);
+  playTurn(id)
+  
+  console.log("winner: " + whoWon())
+
+})
+
+$('.restart').click(restart);
+
+/*tic tac toe logic goes here:  */
+
 var grid = [null, null, null, null, null, null, null, null, null]
-var player = 1
+var player = "x"
+
 function playTurn (index) {
   if (grid[index] || isGameOver()) {
     return false
   } else {
     grid[index] = player
-    if (player === 1) player = 2
-    else player = 1
-    return true
+    $("#" + index).text(player);
+    if (player === "x") player = "o"
+    else player = "x"
+    return true   // need to add if/else conditional to detect if game is over.
   }
 }
 
@@ -15,6 +32,19 @@ function isGameOver () {
   if (whoWon()) return true
   return false
 }
+
+// function showWinner() {
+//   if (whoWon() === "x") {
+//     alert("player X wins!")
+//   }
+//   else if (whoWon() === "o") {
+//     alert("player O wins!")
+//   }
+//   else if (whoWon() === 3 ) {
+//     alert("It's a draw! Try again!")
+//   }
+//   else{}
+// }
 
 function whoWon () {
   if (grid[0] && grid[0] === grid[1] && grid[0] === grid[2]) return grid[0]
@@ -30,7 +60,27 @@ function whoWon () {
   return 0
 }
 
+
 function restart () {
   grid = [null, null, null, null, null, null, null, null, null]
-  player = 1
+  player = "x"
+  $('.grid').empty();
 }
+
+// function countScore() {
+//   xWins = 0;
+//   oWins = 0;
+//   if (whoWon() == "x") {
+//     return xWins++
+//   }
+//   else if (whoWon() == "o") {
+//     return oWins++
+//   }
+//   else {
+
+//   }
+// }
+
+
+
+})

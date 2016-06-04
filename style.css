@@ -1,0 +1,31 @@
+body{
+  background:gold;
+  font-family: Helvetica;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+
+h1 {
+  text-align: center
+}
+
+.grid {
+  height: 50px;
+  width: 50px;
+  background:white;
+  border:5px solid lightblue;
+  font-size: 2em;
+  font-weight: bold;
+  color: purple;
+  text-align: center;
+}
+
+.container {
+  display:flex;
+  justify-content: center;
+}
+
+.result {
+/*  display: none;
+*/}
